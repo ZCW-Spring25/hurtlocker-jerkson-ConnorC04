@@ -14,16 +14,8 @@ public class GroceryReporter {
 
     @Override
     public String toString() {
-        StringBuilder fileContent = new StringBuilder();
-        GroceryReporter reporter = new GroceryReporter(originalFileText);
-        try (BufferedReader reader = new BufferedReader(new java.io.FileReader(originalFileText))){
-            String line;
-            while ((line = reader.readLine()) != null){
-                fileContent.append(line).append(System.lineSeparator());
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        return fileContent.toString();
+        int errorCount = 0;
+
+        return null;
     }
 }
