@@ -18,10 +18,10 @@ public class GroceryReporter {
     @Override
     public String toString() {
 
-        GroceryReporter reporter = new GroceryReporter(originalFileText);
+        GroceryReporter reporter = new GroceryReporter("RawInput.JerkSON");
         ItemParser parser = new ItemParser();
 
-        List<Item> items = parser.parseItemList(originalFileText);
+        List<Item> items = parser.parseItemList("RawInput.JerkSON");
 
         Map<Item, Integer> itemCount = new HashMap<>();
         Map<Item, Map<Double, Integer>> priceCount = new HashMap<>();
@@ -46,6 +46,8 @@ public class GroceryReporter {
         }
 
 
-        return null;
+        sb.append("Errors          \t seen: ").append(errorCount).append(" times\n");
+
+        return sb.toString();
     }
 }
