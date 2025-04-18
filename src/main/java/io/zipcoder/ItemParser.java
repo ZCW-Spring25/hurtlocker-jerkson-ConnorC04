@@ -52,6 +52,9 @@ public class ItemParser {
         if (name == null || price == null || type == null || expiration == null){
             throw new ItemParseException();
         }
+        if (name.contains("0")){
+            throw new ItemParseException();
+        }
         return new Item(name, price, type, expiration);
     }
 }
